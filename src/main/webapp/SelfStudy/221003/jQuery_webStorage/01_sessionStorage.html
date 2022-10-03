@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- sessionStorage라는, 쿠키와 비슷한 기능을 하는 세션에 관련된 jquery 함수를 사용하는 예제이다.
+	쿠키와의 차이점은, 세션은 브라우져가 완전히 닫힐때 삭제된다는 점이 차이점이다.
+	01예제에서 storage에 세션을 저장하고 02예제에서 세션을 불러오는 코드를 구현한다. -->
+<style>
+ div{width:300px; height:100px ; border: 1px red solid;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#btnSave").click(function(){
+		let key=$("#s_key").val();
+		let value=$("#s_value").val();
+		
+		if(key==""||value==""){ //key,value 입력이 없다면
+			alert("key와 value를 입력해주세요");
+			return; //빠져나가기
+		}
+		//sessionStorage 영역 저장
+		sessionStorage.setItem(key,value); //session에 저장(위의 key,value변수이용)
+		
+		//text내용 비우기
+		$("#s_key").val("");
+		$("#s_value").val("");
+		$("#s_key").focus();
+
+		getInfo(); //완료후 함수 호출하여 페이지 갱신
+	});//#btnSave.click끝
+	
+	//지우기
+	$("#btnClear").click(function(){
+		//모두 지우기
+		//sessionStorage.clear();
+		
+		//개별지우기
+		let key=prompt("삭제할 key?");
+		sessionStorage.removeItem(key);
+		
+		getInfo(); //완료후 함수 호출하여 페이지 갱신
+	});
+	
+	
+	//sessionStorage영역에 있는 정보 가져오기
+	function getInfo(){
+		let len=sessionStorage.length;
+		let str="저장된 개수:"+len+"<br>";
+		for(let i=0; i<len ; i++){
+			//key찾기
+			let key=sessionStorage.key(i); 
+			//i=0,1,2,...지만 키가 순서대로 있을필요는없음Map비슷(Map도 순서는 무관)
+			
+			let value=sessionStorage.getItem(key);
+			
+			str+=key+":"+value+"<br>";
+		}//for문끝
+		
+		//div영역에 추가
+		$("#result").html(str);
+	}//getInfo()끝
+
+	getInfo(); //페이지 호출
+});
+   
+</script>
+
+</head>
+<body>
+<h1> sessionStorage Test - 브라우져 시작~종료 될때까지 유지 </h1>
+<form>
+  key : <input id="s_key" type="text" name="s_key" />
+  value : <input id="s_value" type="text" name="s_value" />
+  
+ <input  id="btnSave" type="button"  value="저장하기" />
+ <button id="btnClear" type="button" >정보 지우기 </button>
+ <hr>
+ <div id="result"></div>
+</form>
+<a href="02_sessionResult.html">session정보 확인하러 가자</a>
+
+
+</body>
+</html>
+
+
+
+
+
+

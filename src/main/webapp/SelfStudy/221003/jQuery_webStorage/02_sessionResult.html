@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- 01예제에서 저장한 session을 불러와서 확인하는 페이지이다
+	이전에 썼던 01예제의 함수를 그대로 활용한다. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+$(function(){
+	function getInfo(){
+		let len=sessionStorage.length;
+		let str="저장된 개수:"+len+"<br>";
+		for(let i=0; i<len ; i++){
+			//key찾기
+			let key=sessionStorage.key(i);
+			let value=sessionStorage.getItem(key);
+			
+			str+=key+":"+value+"<br>";
+		}//for문끝
+		
+		//div영역에 추가
+		$("#result").html(str);
+	}//getInfo()끝
+	
+	getInfo();
+});
+/*$(function(){
+	getInfo();
+});*/
+</script>
+</head>
+<body>
+<h1>sessionStorage 정보</h1>
+<div id="result"></div>
+</body>
+</html>
