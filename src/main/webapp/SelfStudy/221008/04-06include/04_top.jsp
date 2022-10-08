@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- include : 다른 파일(문서) 삽입하여 출력 -->
 </head>
 <body>
 <h1> 메뉴입니다. - top.jsp </h1>
