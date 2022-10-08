@@ -7,18 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> include 지시자 TEST </h1>
-
-<%@ include file="04_top.jsp" %>
 <%
-   String addr="서울시 강남구";
+  String addr2="오리";
 %>
-
-<h3> 여기는 main.jsp 영역입니다...</h3>
-
-<hr color="blue">
-
-<%@ include file="06_footer.jsp" %>
+<h3> footer.jsp입니다.</h3>
+<h4> 주소 : <%=addr2%></h4>
 
 
 
