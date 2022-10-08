@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2> action include TEST </h2>
-
+<!-- addr값이 같은 값이라 그런지 변수 중복되어도 오류안남 -->
  <jsp:include page="07_top.jsp" />
  
  <%
