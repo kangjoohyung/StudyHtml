@@ -28,7 +28,7 @@
    
 %>
 
- <jsp:forward page="forwardResult.jsp" >
+ <jsp:forward page="09_forwardResult.jsp" >
    <jsp:param value="<%=sum%>" name="total"/>
    <jsp:param value="즐거운주말" name="message"/>
  </jsp:forward>
