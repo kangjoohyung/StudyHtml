@@ -21,7 +21,7 @@
    
    if(dbId.equals(userId) && dbPwd.equals(userPwd)){//모두 일치하면
 	   //이동
-	   response.sendRedirect("LoginOK.jsp?userName=" + URLEncoder.encode(userName, "UTF-8") );
+	   response.sendRedirect("08_LoginOK.jsp?userName=" + URLEncoder.encode(userName, "UTF-8") );
    
        //forward방식
        //request.getRequestDispatcher("LoginOK.jsp").forward(request, response);
