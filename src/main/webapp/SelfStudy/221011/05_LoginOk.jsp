@@ -22,7 +22,7 @@
 	  $("a").click(function(){
 		  //로그아웃기능을하는 페이지로 이동해서 모든세션의 삭제
 		  if(confirm("로그아웃할래?")){
-			  location.href="Logout.jsp";
+			  location.href="06_Logout.jsp";
 		  }
 		  
 	  });
@@ -51,7 +51,7 @@
 	  %>
 	   <script type="text/javascript">
 	     alert("인증하고 이용해주세요.");
-	     location.href="LoginForm.html";
+	     location.href="03_LoginForm.html";
 	   </script>
       <% 	  
   }
