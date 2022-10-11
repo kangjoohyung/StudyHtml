@@ -27,7 +27,7 @@
 	   session.setAttribute("creationTime", new Date(session.getCreationTime()).toLocaleString());
 	   
 	   //이동한다.
-	   response.sendRedirect("LoginOk.jsp");
+	   response.sendRedirect("05_LoginOk.jsp");
 	   
    }else{
 	 out.println("<script>");  
