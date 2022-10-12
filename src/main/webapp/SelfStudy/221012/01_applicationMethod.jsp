@@ -31,7 +31,7 @@ application영역에 저장된 정보 확인<p>
 주소 : <%=application.getAttribute("addr") %><br>
 메뉴 : <%=application.getAttribute("menus") %><br>
 
-<a href="${pageContext.request.contextPath}/ex1004/session/sessionGet.jsp">
+<a href="${pageContext.request.contextPath}/SelfStudy/221011/02_sessionGet.jsp">
   정보확인하러가자.
 </a>
 
