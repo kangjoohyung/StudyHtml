@@ -24,7 +24,7 @@
  response.addCookie(cookie2);
 %>
 
-<a href="cookieGet.jsp">쿠키확인하러가자</a>
+<a href="04_cookieGet.jsp">쿠키확인하러가자</a>
 
 </body>
 </html>
