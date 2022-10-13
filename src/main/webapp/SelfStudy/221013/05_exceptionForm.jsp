@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3> [NumberFormatException Form]</h3>
-<form action="exceptionPro.jsp">
+<form action="06_exceptionPro.jsp">
  숫자 1 : <input type="text" name="num1"/> <br/>
  숫자 2 : <input type="text" name="num2"/> <br/>
  <input type="submit" value="계산" />
@@ -17,7 +17,7 @@
 <hr color="red"/>
 
 <h3> [ArithmeticException Form]</h3>
-<form action="exceptionArithPro.jsp">
+<form action="07_exceptionArithPro.jsp">
  나눌 수 : <input type="text" name="num1"/> <br/>
  
  <input type="submit" value="계산" />
