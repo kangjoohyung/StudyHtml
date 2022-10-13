@@ -32,7 +32,7 @@
     }
 %>
 
-<a href="board_Form.html">등록하기</a>
+<a href="01_exam_board_Form.html">등록하기</a>
 
 <!--
     작성자이름_시간.txt 으로 저장
