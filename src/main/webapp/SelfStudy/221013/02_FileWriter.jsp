@@ -42,7 +42,7 @@
 	
     out.println("<script>");
     out.println("alert('생성되었습니다.')");
-    out.println("location.href='FileReader.jsp';");
+    out.println("location.href='03_FileReader.jsp';");
    out.println("</script>");
 %>
 
