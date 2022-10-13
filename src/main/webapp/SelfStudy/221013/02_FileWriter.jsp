@@ -22,7 +22,7 @@
 	String content = request.getParameter("content");//그 파일의 내용
 	
 	
-	String realPath = application.getRealPath("/ex1004_exam/application/save");
+	String realPath = application.getRealPath("/SelfStudy/221013/save");
 	
 	long time = System.currentTimeMillis();
 	String path = realPath + "/" + name+"_"+time+".txt";
