@@ -18,7 +18,7 @@
 예외클래스 : <%=exception.getClass() %><p>
 
 <hr>
-<a href="exceptionForm.jsp">폼으로이동</a>
+<a href="05_exceptionForm.jsp">폼으로이동</a>
 
 
 </body>
