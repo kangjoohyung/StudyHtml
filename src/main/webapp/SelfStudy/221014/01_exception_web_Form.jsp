@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3> [web.xml문서 설정 예외처리]</h3>
-<form action="number_Pro.jsp">
+<form action="02_number_Pro.jsp">
  숫자 1 : <input type="text" name="num1"/> <br/>
  숫자 2 : <input type="text" name="num2"/> <br/>
  <input type="submit" value="계산" />
@@ -17,7 +17,7 @@
 <hr color="red"/>
 
 <h3> [web.xml문서 설정 예외처리]</h3>
-<form action="arith_Pro.jsp">
+<form action="03_arith_Pro.jsp">
  나눌 수 : <input type="text" name="num1"/> <br/>
  
  <input type="submit" value="계산" />
