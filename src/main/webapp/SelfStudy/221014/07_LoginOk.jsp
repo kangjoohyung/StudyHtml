@@ -51,7 +51,7 @@
 	  %>
 	   <script type="text/javascript">
 	     alert("인증하고 이용해주세요.");
-	     location.href="LoginForm.html";
+	     location.href="06_LoginForm.html";
 	   </script>
       <% 	  
   }
