@@ -9,8 +9,8 @@
 <body>
 <h3>Context-param 가져오기 </h3>
 <h4>
-  메시지 :<%=application.getInitParameter("message") %><p>
-  driverName :<%=application.getInitParameter("driverName") %> 
+  메시지 :<%=application.getInitParameter("ex221015message") %><p>
+  driverName :<%=application.getInitParameter("ex221015driverName") %> 
 </h4>
 
 
