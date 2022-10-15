@@ -20,4 +20,16 @@
     <exception-type>java.lang.ArithmeticException</exception-type>
     <location>/SelfStudy/221014/error/04_arith.jsp</location>
   </error-page>
+  
+  <!-- 프로젝트 전체영역에서 공유해서 사용할수 있는 init-param설정  -->
+   <context-param>
+     <param-name>ex221015message</param-name>
+     <param-value>오늘도 수고하셨습니다.</param-value>
+   </context-param>
+   
+   <context-param>
+     <param-name>ex221015driverName</param-name>
+     <param-value>jdbc.odbc.OracleDriver</param-value>
+   </context-param>
+  
 </web-app>
