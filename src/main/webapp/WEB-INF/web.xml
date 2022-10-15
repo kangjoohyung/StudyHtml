@@ -31,5 +31,25 @@
      <param-name>ex221015driverName</param-name>
      <param-value>jdbc.odbc.OracleDriver</param-value>
    </context-param>
+ 
+   <!-- initparam설정 -->
+  <servlet>
+    <servlet-name>ex221015initParamServlet</servlet-name>
+    <servlet-class>ex221015.servlet.InitParamServlet</servlet-class>
+    <init-param>
+      <param-name>ex221015dbId</param-name>
+      <param-value>jang</param-value>
+    </init-param>
+    <init-param>
+      <param-name>ex221015dbPwd</param-name>
+      <param-value>1234</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
   
+  
+  <servlet-mapping>
+    <servlet-name>ex221015initParamServlet</servlet-name>
+    <url-pattern>/ex221015initParam </url-pattern>
+  </servlet-mapping>
 </web-app>
