@@ -35,7 +35,7 @@
    <!-- initparam설정 -->
   <servlet>
     <servlet-name>ex221015initParamServlet</servlet-name>
-    <servlet-class>ex221015.servlet.InitParamServlet</servlet-class>
+    <servlet-class>ex221015.servlet.Ex01InitParamServlet</servlet-class>
     <init-param>
       <param-name>ex221015dbId</param-name>
       <param-value>jang</param-value>
