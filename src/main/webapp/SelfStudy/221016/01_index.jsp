@@ -14,8 +14,8 @@
 <table>
 <tr><td colspan=3>d</td></tr>
 <tr>
-<td><iframe src="left.jsp">f <jsp:include page="left.jsp" /></td>
-<td><iframe src="center.jsp">f</td>
+<td><iframe src="03_left.jsp">f <jsp:include page="03_left.jsp" /></td>
+<td><iframe src="04_center.jsp">f</td>
 </tr>
 <tr><td colspan="3">d</td></tr>
 </table>
