@@ -23,10 +23,10 @@ table tr:nth-child(2) > td:nth-child(1){width:200px;}
 </head>
 <body>
 <table>
-<tr><td colspan="2"><jsp:include page="top.jsp" /></td></tr>
-<tr><td><iframe src="left.jsp" name="left"></iframe></td>
-<td><iframe src="center.jsp" name="center"></iframe></td></tr>
-<tr><td colspan="2"><jsp:include page="footer.jsp" /></td></tr>
+<tr><td colspan="2"><jsp:include page="02_top.jsp" /></td></tr>
+<tr><td><iframe src="03_left.jsp" name="left"></iframe></td>
+<td><iframe src="04_center.jsp" name="center"></iframe></td></tr>
+<tr><td colspan="2"><jsp:include page="05_footer.jsp" /></td></tr>
 </table>
 </body>
 </html>
