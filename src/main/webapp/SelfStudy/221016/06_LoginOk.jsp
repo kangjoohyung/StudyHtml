@@ -36,13 +36,13 @@
 \${pageContext.request.contextPath} = ${pageContext.request.contextPath} <p>
 
 <c:choose>
-  <c:when test="${sessionScope.sessionId!=null}">
+  <c:when test="${sessionScope.sessionId!=${dbId}">
       <h3>
 	     ${sessionScope.sessionName} (${sessionId})님 로그인 중 ^^
 	     [접속시간 : ${creationTime} ] <p>
 	    </h3>
-	  	<img src="images/bin.jpg"><p>
-	  	<a href="#">로그아웃</a>
+	  	<img src="../images/bin.jpg"><p>
+	  	<a href="${pageContext.request.contextPath }/logout">로그아웃</a>
   </c:when>
   <c:otherwise>
         <script type="text/javascript">

@@ -17,8 +17,9 @@ import javax.servlet.http.HttpSession;
 				@WebInitParam(name="dbId", value="jang"),
 				@WebInitParam(name="dbPwd", value="1234")})
 public class Ex08LoginServlet extends HttpServlet {
-	String dbId, dbPwd;
-
+	String dbId;
+	String dbPwd;
+	
 	 public Ex08LoginServlet() {
 		 System.out.println("LoginServlet 생성됨.....");
 	 }
@@ -42,6 +43,7 @@ public class Ex08LoginServlet extends HttpServlet {
 		
 		//System.out.println("userName = " + userName);
 		
+		try {
 		if(dbId.equals(userId) && dbPwd.equals(userPwd)) {
 			//세션에 정보를 저장
 			HttpSession session = request.getSession();
@@ -58,6 +60,9 @@ public class Ex08LoginServlet extends HttpServlet {
 			out.println("alert('정보를 다시 확인해주세요.')");
 			out.println("history.back()");
 			out.println("</script>");
+		}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 		
 		
