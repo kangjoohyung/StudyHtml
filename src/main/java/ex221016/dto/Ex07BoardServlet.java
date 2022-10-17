@@ -45,7 +45,7 @@ import ex221016.dto.Ex06BoardDTO;
 		}, loadOnStartup=1)
 public class Ex07BoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private List<BoardDTO> boardList=new ArrayList<BoardDTO>();
+	private List<Ex06BoardDTO> boardList=new ArrayList<Ex06BoardDTO>();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -62,9 +62,9 @@ public class Ex07BoardServlet extends HttpServlet {
 	 */
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
-		boardList.add(new BoardDTO(10, super.getInitParameter("subject"),super.getInitParameter("content")));
-		boardList.add(new BoardDTO(20, "Sp", "dd"));
-		boardList.add(new BoardDTO(30, "jQuery", "ㅇㅇ"));
+		boardList.add(new Ex06BoardDTO(10, super.getInitParameter("subject"),super.getInitParameter("content")));
+		boardList.add(new Ex06BoardDTO(20, "Sp", "dd"));
+		boardList.add(new Ex06BoardDTO(30, "jQuery", "ㅇㅇ"));
 		
 		ServletContext application=super.getServletContext();
 		application.setAttribute("boardList", boardList);//뷰에서 ${applicationScope.boardList } 사용
@@ -82,7 +82,7 @@ public class Ex07BoardServlet extends HttpServlet {
 		String subject=request.getParameter("subject");
 		String content=request.getParameter("content");
 		
-		boardList.add(new BoardDTO(Integer.parseInt(no),subject,content));
+		boardList.add(new Ex06BoardDTO(Integer.parseInt(no),subject,content));
 		
 		//이동
 		response.sendRedirect("center.jsp");
