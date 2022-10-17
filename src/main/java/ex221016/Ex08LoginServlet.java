@@ -50,7 +50,7 @@ public class Ex08LoginServlet extends HttpServlet {
 			session.setAttribute("creationTime", new Date().toLocaleString());
 			
 			//redirect방식 이동
-			response.sendRedirect("LoginOk.jsp");
+			response.sendRedirect("06_LoginOk.jsp");
 			
 		}else {
 			PrintWriter out = response.getWriter();
