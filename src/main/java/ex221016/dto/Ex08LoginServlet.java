@@ -16,10 +16,10 @@ import javax.servlet.http.HttpSession;
 		urlPatterns="/login", loadOnStartup =1, initParams={
 				@WebInitParam(name="dbId", value="jang"),
 				@WebInitParam(name="dbPwd", value="1234")})
-public class Ex08_LoginServlet extends HttpServlet {
+public class Ex08LoginServlet extends HttpServlet {
 	String dbId, dbPwd;
 
-	 public Ex08_LoginServlet() {
+	 public Ex08LoginServlet() {
 		 System.out.println("LoginServlet »ý¼ºµÊ.....");
 	 }
 	 
