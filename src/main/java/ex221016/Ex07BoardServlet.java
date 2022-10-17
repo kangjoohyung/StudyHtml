@@ -1,4 +1,4 @@
-package ex221016.dto;
+package ex221016;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ex221016.dto.Ex06BoardDTO;
+import ex221016.Ex06BoardDTO;
 
 /**
  * Servlet implementation class BoardServlet

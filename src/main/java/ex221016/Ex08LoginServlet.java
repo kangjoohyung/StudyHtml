@@ -1,4 +1,4 @@
-package ex221016.dto;
+package ex221016;
 
 import java.io.IOException;
 import java.io.PrintWriter;

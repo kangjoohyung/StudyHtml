@@ -1,4 +1,4 @@
-package ex221016.dto;
+package ex221016;
 
 public class Ex06BoardDTO {
 	private int no;
