@@ -1,4 +1,4 @@
-<%@page import="ex1006.el.Product"%>
+<%@page import="ex22101718.Ex01Product"%>
 <%@page import="java.util.Arrays"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
