@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 				@WebInitParam(name="dbId", value="jang"),
 				@WebInitParam(name="dbPwd", value="1234")})
 public class Ex08_LoginServlet extends HttpServlet {
+	String dbId, dbPwd;
 
 	 public Ex08_LoginServlet() {
 		 System.out.println("LoginServlet »ý¼ºµÊ.....");
