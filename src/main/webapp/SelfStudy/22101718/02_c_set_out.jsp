@@ -38,7 +38,7 @@ ${"<h4>안녕5</h4>"}<hr color="red">
 주소 : ${addr} /${applicationScope.addr}  / <c:out value="${addr}"/> <br>
 이름 : ${name} / <c:out value="${name}"/> <br>
 
-<a href="ex02_result.jsp">확인하러가자</a>
+<a href="03_result.jsp">확인하러가자</a>
 </body>
 </html>
 
