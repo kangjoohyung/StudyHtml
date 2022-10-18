@@ -27,7 +27,7 @@
 
 <hr>
 <h4> Bean에 있는 데이터 출력</h4>
-<jsp:useBean id="bean" class="ex1006.jstl.ForEachBean"/>
+<jsp:useBean id="bean" class="ex22101718.Ex02ForEachBean"/>
 
 menus: ${bean.menus}<p> <!-- bean.getMenus() 호출 -->
 names:${bean.names}<p>
