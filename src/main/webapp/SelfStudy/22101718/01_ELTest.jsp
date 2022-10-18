@@ -90,7 +90,7 @@
  --%>
  
  <!-- 객체 생성 -->
- <jsp:useBean id="p" class="ex1006.el.Product" />
+ <jsp:useBean id="p" class="ex22101718.Ex01Product" />
  상품코드 :<%=p.getCode() %> / ${p.code} <!-- p.getCode() 호출 --> <br>
  상품이름 : ${p.name}<br> <!-- p.getName() 호출 -->
  가격:${p.price}<br>
