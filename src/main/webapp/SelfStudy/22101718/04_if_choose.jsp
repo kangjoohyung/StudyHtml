@@ -47,7 +47,7 @@
 
 <hr>
 
-<form action="ex03_if_choose.jsp">
+<form action="04_if_choose.jsp">
   이름 : <input type="text" name="name" value="${param.name}"><br>
   선택 :
       <select name="job">
