@@ -10,7 +10,7 @@
 
 <%
    session.invalidate();//모든세션정보 삭제
-   response.sendRedirect("LoginForm.html");//폼으로이동
+   response.sendRedirect("06_LoginForm.html");//폼으로이동
 %>
 
 
