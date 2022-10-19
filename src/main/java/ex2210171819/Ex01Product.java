@@ -1,4 +1,4 @@
-package ex22101718;
+package ex2210171819;
 
 public class Ex01Product {
 	private String code="A01";

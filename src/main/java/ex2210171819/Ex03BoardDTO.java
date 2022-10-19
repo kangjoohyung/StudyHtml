@@ -1,4 +1,4 @@
-package ex22101718;
+package ex2210171819;
 /**글번호 ,제목, 내용 속성 관리*/
 /*
  *  application영역에 List<BoardDTO>저장한다.

@@ -1,4 +1,4 @@
-<%@page import="ex22101718.Ex01Product"%>
+<%@page import="ex2210171819.Ex01Product"%>
 <%@page import="java.util.Arrays"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -62,25 +62,25 @@
  
  Scope영역(pageContext &lt; request &lt; session &lt; application) 있는 정보 가져오기 
  <%
-    //정보 저장
-    request.setAttribute("id", "82523jang");
- 
-    session.setAttribute("addr", "오리역");
-    session.setAttribute("message", "표현언어 연습중...");
-    
-    application.setAttribute("message", "즐거운 연휴다!!!");
-    application.setAttribute("hobbys", Arrays.asList("등산","수영","낚시","골프"));
-    
- 
- %>
+      p
+
+          //정보 저장
+          request.setAttribute("id", "82523jang");
+       
+          session.setAttribute("addr", "오리역");
+          session.setAttribute("message", "표현언어 연습중...");
+          
+          application.setAttribute("message", "즐거운 연휴다!!!");
+          application.setAttribute("hobbys", Arrays.asList("등산","수영","낚시","골프"));
+      %>
  <hr>
  
- 아이디(request) :<%=request.getAttribute("id")%> / ${requestScope.id} / ${id} <p>
+ 아이디(request) :<%=t(request.getAttribute("id%> / ${requestScope.id} / ${id} <p>
  
- addr(session) :<%=session.getAttribute("addr") %> / ${sessionScope.addr} / ${addr}<br>
+ addr(session) :<%=t(session.getAttribute("addr"%> / ${sessionScope.addr} / ${addr}<br>
  message(session):${sessionScope.message} / ${message} <p>
  
- message(application):<%=application.getAttribute("message")%> / ${applicationScope.message} / ${message}<br>
+ message(application):<%=t(application.getAttribute("message%> / ${applicationScope.message} / ${message}<br>
  hobbys(application): ${applicationScope.hobbys}  / ${hobbys} <hr>
  
  자바 객체의 속성 및 메소드 접근 <p>
@@ -90,7 +90,7 @@
  --%>
  
  <!-- 객체 생성 -->
- <jsp:useBean id="p" class="ex22101718.Ex01Product" />
+ <jsp:useBean id="t" class="w ex2210171819.Ex01Produ" />
  상품코드 :<%=p.getCode() %> / ${p.code} <!-- p.getCode() 호출 --> <br>
  상품이름 : ${p.name}<br> <!-- p.getName() 호출 -->
  가격:${p.price}<br>
