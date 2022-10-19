@@ -39,7 +39,7 @@ String hobbys[]={"등산","수영","낚시","골프"};
 </c:forEach>
 <hr>
 <h4> Bean에 있는 데이터 출력</h4>
-<jsp:useBean id="bean" class="ex1006.jstl.ForEachBean" />
+<jsp:useBean id="bean" class="ex2210171819.Ex02ForEachBean" />
 
 menus:${bean.menus }<p> <!--bean.getMenus() 호출-->
 names:${bean.names }<p>
