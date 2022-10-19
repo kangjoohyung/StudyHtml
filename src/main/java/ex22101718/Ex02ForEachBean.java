@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import ex1006.dto.BoardDTO;
 
 public class Ex02ForEachBean {
 	private String names[]= {"연아","규연","희진","두영","재덕"};
