@@ -13,7 +13,7 @@
 </head>
 <body>
 <h3>~.jsp 이동</h3>
-<form action="encodingResult.jsp" method="post">
+<form action="04_encodingResult.jsp" method="post">
 이름 : <input type="text" name="name">
 <input type="submit" value="전송">
 </form>
