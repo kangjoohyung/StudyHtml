@@ -20,7 +20,7 @@
 
 <hr>
 <h3>Servlet 이동</h3>
-<form action="encodingTest" method="post">
+<form action="Ex03EncodingTest" method="post">
 이름 : <input type="text" name="name">
 <input type="submit" value="전송">
 </body>
