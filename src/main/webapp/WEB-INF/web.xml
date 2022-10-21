@@ -57,7 +57,7 @@
   	sampleFilter=new SampleFilter(); 동일 -->
   <filter>
   	<filter-name>sampleFilter</filter-name>
-  	<filter-class>ex1011.filter.SampleFilter</filter-class>
+  	<filter-class>ex22102021.Ex01SampleFilter</filter-class>
   </filter>
   <filter-mapping>
   	<filter-name>sampleFilter</filter-name>
