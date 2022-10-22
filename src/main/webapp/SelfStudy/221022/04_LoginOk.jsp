@@ -24,7 +24,7 @@
 	  $("a").click(function(){
 		  //로그아웃기능을하는 페이지로 이동해서 모든세션의 삭제
 		  if(confirm("로그아웃할래?")){
-			  location.href="Logout.jsp";
+			  location.href="05_Logout.jsp";
 		  }
 		  
 	  });
@@ -42,13 +42,13 @@
 	     [접속시간 : ${creationTime} ] <p>
 	     [접속자 수 : ${applicationScope.count}명]
 	    </h3>
-	  	<img src="images/bin.jpg"><p>
+	  	<img src="../images/bin.jpg"><p>
 	  	<a href="#">로그아웃</a>
   </c:when>
   <c:otherwise>
         <script type="text/javascript">
 	     alert("인증하고 이용해주세요.");
-	     location.href="LoginForm.html";
+	     location.href="02_LoginForm.html";
 	   </script>
   </c:otherwise>
 </c:choose>
