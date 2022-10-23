@@ -64,4 +64,16 @@
   	<url-pattern>/01_test01.jsp</url-pattern>
   	<url-pattern>/02_test02.jsp</url-pattern>
   </filter-mapping>
+  
+  <!-- 22102223 예제 -->
+    <!-- listener등록 -->
+  <listener>
+  	<listener-class>ex22102223.Ex01AppListener</listener-class>
+  </listener>
+  <!--세션 설정변경 session timeout 분단위 -->
+  <!--  session-config>
+  	<session-timeout>1</session-timeout>
+  </session-config -->
+  
+  
 </web-app>
