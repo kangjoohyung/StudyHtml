@@ -68,7 +68,7 @@ public class Ex01UpLoadServlet extends HttpServlet {
 		request.setAttribute("saveDir", saveDir);
 		
 		//결과페이지로 이동-뷰에서 출력할 정보를 저장해서 간다
-		request.getRequestDispatcher("221023/upLoadResult.jsp").forward(request, response);
+		request.getRequestDispatcher("221023/02_upLoadResult.jsp").forward(request, response);
 	}
 
 }
