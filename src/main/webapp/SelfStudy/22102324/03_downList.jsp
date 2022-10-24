@@ -18,7 +18,7 @@ a{text-decoration:none}
 <h3> 다운로드 가능한 파일 정보</h3>
 <ul>
 <c:forEach items="${fileNames }" var="fileName">
-	<li><a href="downLoad?fName=${fileName}">${fileName }</li>
+	<li><a href="ex22102324downLoad?fName=${fileName}">${fileName }</li>
 </c:forEach>
 </ul>
 </body>
