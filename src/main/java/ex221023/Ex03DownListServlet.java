@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class DownListServlet
  */
-@WebServlet("/downList")
+@WebServlet("/ex221023Ex03DownList")
 public class Ex03DownListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
