@@ -33,7 +33,7 @@ public class Ex03DownListServlet extends HttpServlet {
 			request.setAttribute("fileNames", fileNames); //뷰에서 ${fileNames}로 사용
 		}
 		//이동
-		request.getRequestDispatcher("downList.jsp").forward(request, response);
+		request.getRequestDispatcher("221023/03_downList.jsp").forward(request, response);
 		
 	}
 
