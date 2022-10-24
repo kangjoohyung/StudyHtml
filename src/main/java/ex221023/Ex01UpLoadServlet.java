@@ -13,7 +13,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 /**
  * Servlet implementation class UpLoadServlet
  */
-@WebServlet("/UpLoad")
+@WebServlet("/ex221023Ex01UpLoad")
 public class Ex01UpLoadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
