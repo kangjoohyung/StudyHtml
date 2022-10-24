@@ -13,7 +13,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 /**
  * Servlet implementation class UpLoadServlet
  */
-@WebServlet("/ex221023Ex01UpLoad")
+@WebServlet("/ex22102324Ex01UpLoad")
 public class Ex01UpLoadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -68,7 +68,7 @@ public class Ex01UpLoadServlet extends HttpServlet {
 		request.setAttribute("saveDir", saveDir);
 		
 		//결과페이지로 이동-뷰에서 출력할 정보를 저장해서 간다
-		request.getRequestDispatcher("221023/02_upLoadResult.jsp").forward(request, response);
+		request.getRequestDispatcher("22102324/02_upLoadResult.jsp").forward(request, response);
 	}
 
 }

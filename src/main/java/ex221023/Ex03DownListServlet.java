@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class DownListServlet
  */
-@WebServlet("/ex221023Ex03DownList")
+@WebServlet("/ex22102324Ex03DownList")
 public class Ex03DownListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -33,7 +33,7 @@ public class Ex03DownListServlet extends HttpServlet {
 			request.setAttribute("fileNames", fileNames); //뷰에서 ${fileNames}로 사용
 		}
 		//이동
-		request.getRequestDispatcher("221023/03_downList.jsp").forward(request, response);
+		request.getRequestDispatcher("22102324/03_downList.jsp").forward(request, response);
 		
 	}
 
