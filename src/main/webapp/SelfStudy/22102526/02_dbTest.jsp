@@ -16,7 +16,7 @@
 <body>
 <h3>DBCP TEST하기</h3>
 <%
-TestDAO dao=new TestDAO();
+Ex03TestDAO dao=new Ex03TestDAO();
 List<String> list=dao.selectByEname();
 
 out.println("결과:"+list);
