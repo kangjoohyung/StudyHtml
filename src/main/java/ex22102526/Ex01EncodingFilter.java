@@ -15,7 +15,7 @@ import javax.servlet.annotation.WebInitParam;
 		initParams = { 
 				@WebInitParam(name = "encoding", value = "UTF-8")
 		})
-public class EncodingFilter implements Filter {
+public class Ex01EncodingFilter implements Filter {
 	private String encoding;
 	
 	public void init(FilterConfig fConfig) throws ServletException {
