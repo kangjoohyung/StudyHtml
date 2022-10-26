@@ -18,7 +18,7 @@ public class Ex03TestDAO {
 		String sql="select ename from emp";
 		
 		try {
-			con=DbUtil.getConnection();
+			con=Ex02DbUtil.getConnection();
 			ps=con.prepareStatement(sql);
 			rs=ps.executeQuery();
 			while(rs.next()) {
@@ -27,7 +27,7 @@ public class Ex03TestDAO {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex02DbUtil.dbClose(con, ps, rs);
 		}
 		return list;
 	}//메소드 끝
