@@ -7,13 +7,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import kosta.dto.Member;
-
-public class Ex06MemberDAOImpl implements MemberDAO {
+public class Ex06MemberDAOImpl implements Ex05MemberDAO {
 	Connection con=null;
 	PreparedStatement ps=null;
 	ResultSet rs=null;
-	Member member=null;
+	Ex04Member member=null;
 	List<Member> list=new ArrayList<Member>();
 	
 	@Override
@@ -161,6 +159,18 @@ public class Ex06MemberDAOImpl implements MemberDAO {
 			DbUtil.dbClose(con, ps, rs);
 		}
 		return list;		
+	}
+
+	@Override
+	public int insert(Ex04Member member) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Ex04Member selectById(String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
