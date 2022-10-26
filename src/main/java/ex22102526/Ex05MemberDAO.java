@@ -2,20 +2,18 @@ package ex22102526;
 
 import java.util.List;
 
-import kosta.dto.Member;
-
 public interface Ex05MemberDAO {
 	/**
 	 * 전체검색
 	 * select * from member order by join_date desc
 	 */
-	List<Member> selectAll();
+	List<Ex04Member> selectAll();
 	
 	/**
 	 * 등록하기
 	 * insert into member(id, pwd, name, age, addr, phone, join_date) values(?,?,?,?,?,?,sysdate)
 	 */
-	int insert(Member member);
+	int insert(Ex04Member member);
 	
 	/**
 	 * id 중복체크하기
@@ -34,7 +32,7 @@ public interface Ex05MemberDAO {
 	 * 상세보기
 	 * select * from member where id=?
 	 */
-	Member selectById(String id);
+	Ex04Member selectById(String id);
 	
 	/**
 	 * 조건검색
@@ -45,5 +43,5 @@ public interface Ex05MemberDAO {
 	 * select * from member where name like ?
 	 * select * from member where addr like ?
 	 */
-	List<Member> searchByKeyWord(String keyField, String keyWord);
+	List<Ex04Member> searchByKeyWord(String keyField, String keyWord);
 }
