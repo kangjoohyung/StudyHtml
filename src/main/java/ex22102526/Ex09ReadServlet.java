@@ -7,25 +7,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kosta.dao.MemberDAO;
-import kosta.dao.MemberDAOImpl;
-import kosta.dto.Member;
 
 /**
  * Servlet implementation class ReadServlet
  */
-@WebServlet("/read")
+@WebServlet("/22102526read")
 public class Ex09ReadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="error.jsp";
+		String url="SelfStudy/22102526/03_error.jsp";
 		
 		//넘어오는 id를 받기
 		String id = request.getParameter("id");
-		MemberDAO dao = new MemberDAOImpl();
-		Member member = dao.selectById(id);
+		Ex05MemberDAO dao = new Ex06MemberDAOImpl();
+		Ex04Member member = dao.selectById(id);
 		
 		if(member==null) {
 			request.setAttribute("errMsg", id+"에 해당하는 정보가 없습니다.");
