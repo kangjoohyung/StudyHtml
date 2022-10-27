@@ -12,40 +12,40 @@ public class Ex06MemberDAOImpl implements Ex05MemberDAO {
 	PreparedStatement ps=null;
 	ResultSet rs=null;
 	Ex04Member member=null;
-	List<Member> list=new ArrayList<Member>();
+	List<Ex04Member> list=new ArrayList<Ex04Member>();
 	
 	@Override
-	public List<Member> selectAll() {
+	public List<Ex04Member> selectAll() {
 		
 		String sql="select * from member order by join_date desc";
 		
 		try {
-			con=DbUtil.getConnection();
+			con=Ex02DbUtil.getConnection();
 			ps=con.prepareStatement(sql);
 			
 			rs=ps.executeQuery();
 			while(rs.next()) {
-				member=new Member(rs.getString(1), rs.getString(2), rs.getString(3), 
+				member=new Ex04Member(rs.getString(1), rs.getString(2), rs.getString(3), 
 						rs.getInt(4), rs.getString(5), rs.getString(6), rs.getString(7));
 				list.add(member);
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex02DbUtil.dbClose(con, ps, rs);
 		}
 		return list;		
 		
 	}
 
 	@Override
-	public int insert(Member member) {
+	public int insert(Ex04Member member) {
 		int result=0;
 		String sql="insert into member(id, pwd, name, age, addr, phone, join_date) "
 				+ "values(?,?,?,?,?,?,sysdate)";
 		
 		try {
-			con=DbUtil.getConnection();
+			con=Ex02DbUtil.getConnection();
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, member.getId()); 
@@ -59,7 +59,7 @@ public class Ex06MemberDAOImpl implements Ex05MemberDAO {
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			DbUtil.dbClose(con, ps);
+			Ex02DbUtil.dbClose(con, ps);
 		}
 		return result;
 	}
@@ -70,7 +70,7 @@ public class Ex06MemberDAOImpl implements Ex05MemberDAO {
 		String sql="select id from member where id=?";
 		
 		try {
-			con=DbUtil.getConnection();
+			con=Ex02DbUtil.getConnection();
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, id);
@@ -83,29 +83,29 @@ public class Ex06MemberDAOImpl implements Ex05MemberDAO {
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex02DbUtil.dbClose(con, ps, rs);
 		}
 		return result;
 	}
 
 	@Override
-	public Member selectById(String id) { //Read.jsp에서 사용
+	public Ex04Member selectById(String id) { //Read.jsp에서 사용
 		String sql="select * from member where id=?";
 		try {
-			con=DbUtil.getConnection();
+			con=Ex02DbUtil.getConnection();
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, id);
 			
 			rs=ps.executeQuery();
 			if(rs.next()) {
-				member=new Member(rs.getString(1), rs.getString(2), rs.getString(3), 
+				member=new Ex04Member(rs.getString(1), rs.getString(2), rs.getString(3), 
 						rs.getInt(4), rs.getString(5), rs.getString(6), rs.getString(7));
 			}
 		}catch(SQLException e) {
 				e.printStackTrace();
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex02DbUtil.dbClose(con, ps, rs);
 		}
 		return member;
 	}
@@ -115,7 +115,7 @@ public class Ex06MemberDAOImpl implements Ex05MemberDAO {
 		int result=0;
 		String sql="delete from member where id=?";
 		try {
-			con=DbUtil.getConnection();
+			con=Ex02DbUtil.getConnection();
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, id);
@@ -124,13 +124,13 @@ public class Ex06MemberDAOImpl implements Ex05MemberDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			DbUtil.dbClose(con, ps);
+			Ex02DbUtil.dbClose(con, ps);
 		}
 		return result;
 	}
 	
 	@Override
-	public List<Member> searchByKeyWord(String keyField, String keyWord) {
+	public List<Ex04Member> searchByKeyWord(String keyField, String keyWord) {
 
 		String sql="select * from member where ";
 		
@@ -142,35 +142,24 @@ public class Ex06MemberDAOImpl implements Ex05MemberDAO {
 			}
 			System.out.println("sql="+sql); //테스트용-콘솔출력
 			
-			con=DbUtil.getConnection();
+			con=Ex02DbUtil.getConnection();
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, "%"+keyWord+"%");
 			
 			rs=ps.executeQuery();
 			while(rs.next()) {
-				member=new Member(rs.getString(1), rs.getString(2), rs.getString(3), 
+				member=new Ex04Member(rs.getString(1), rs.getString(2), rs.getString(3), 
 						rs.getInt(4), rs.getString(5), rs.getString(6), rs.getString(7));
 				list.add(member);
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex02DbUtil.dbClose(con, ps, rs);
 		}
 		return list;		
 	}
 
-	@Override
-	public int insert(Ex04Member member) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Ex04Member selectById(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
