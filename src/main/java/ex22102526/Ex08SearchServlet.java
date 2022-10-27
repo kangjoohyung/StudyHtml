@@ -9,14 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kosta.dao.MemberDAO;
-import kosta.dao.MemberDAOImpl;
-import kosta.dto.Member;
 
 /**
  * Servlet implementation class SearchServlet
  */
-@WebServlet("/search")
+@WebServlet("/22102526search")
 public class Ex08SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -24,8 +21,8 @@ public class Ex08SearchServlet extends HttpServlet {
 		String keyField=request.getParameter("keyField");
 		String keyWord=request.getParameter("keyWord");
 		
-		MemberDAO dao=new MemberDAOImpl();
-		List<Member> list=dao.searchByKeyWord(keyField, keyWord);
+		Ex05MemberDAO dao=new Ex06MemberDAOImpl();
+		List<Ex04Member> list=dao.searchByKeyWord(keyField, keyWord);
 		
 		request.setAttribute("memberList", list);
 		request.getRequestDispatcher("memberSelect.jsp").forward(request, response);
