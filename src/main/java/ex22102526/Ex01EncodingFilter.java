@@ -11,7 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;
 
 @WebFilter(
-		urlPatterns = { "/ex22102526" }, 
+		urlPatterns = { "/22102526" }, 
 		initParams = { 
 				@WebInitParam(name = "encoding", value = "UTF-8")
 		})
