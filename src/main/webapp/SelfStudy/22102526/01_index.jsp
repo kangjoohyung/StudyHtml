@@ -12,7 +12,7 @@
 <script type="text/javascript" src="js/jquery-3.6.1.min.js"></script>
 
 <script>
-location.href="${pageContext.request.contextPath}/selectAll" // 서블릿 이동
+location.href="${pageContext.request.contextPath}/22102526selectAll" // 서블릿 이동
 </script>
 </head>
 <body>
