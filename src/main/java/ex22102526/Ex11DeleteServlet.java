@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kosta.dao.MemberDAO;
-import kosta.dao.MemberDAOImpl;
 
 /**
  * Servlet implementation class DeleteServlet
@@ -27,7 +25,7 @@ public class Ex11DeleteServlet extends HttpServlet {
 			request.getRequestDispatcher("SelfStudy/22102526/03_error.jsp").forward(request, response);
 		}else {
 			//삭제됨 -> 다시 검색하러
-			response.sendRedirect("selectAll");//삭제되어 정보갱신겸 서블릿 response로
+			response.sendRedirect("22102526selectAll");//삭제되어 정보갱신겸 서블릿 response로
 		}
 	}//service끝
 
