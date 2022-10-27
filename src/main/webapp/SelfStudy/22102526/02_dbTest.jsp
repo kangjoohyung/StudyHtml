@@ -1,4 +1,4 @@
-<%@page import="kosta.dao.TestDAO"%>
+<%@page import="ex22102526.Ex03TestDAO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
