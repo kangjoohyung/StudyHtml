@@ -1,4 +1,4 @@
-<%@page import="kosta.dto.Member"%>
+<%@page import="ex22102526.Ex04Member"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -25,7 +25,7 @@
     		if( confirm("정말 삭제할래요?") ){
     			let idV =  $(this).parent().parent().find("td:eq(1)").text();
     			//alert(idV)
-    			location.href="${pageContext.request.contextPath}/delete?id="+idV;
+    			location.href="${pageContext.request.contextPath}/22102526delete?id="+idV;
     		}
     		 
     	});//삭제끝
@@ -61,8 +61,8 @@
 <table cellspacing="0">
   <tr>
     <th colspan="9" style="text-align:right">
-      <a href="memberForm.html">[ 회원가입 ]</a>&nbsp;&nbsp;&nbsp;
-      <a href="index.jsp">[ 새로고침 ]</a>&nbsp;&nbsp;&nbsp;
+      <a href="SelfStudy/22102526/04_memberForm.html">[ 회원가입 ]</a>&nbsp;&nbsp;&nbsp;
+      <a href="SelfStudy/22102526/01_index.jsp">[ 새로고침 ]</a>&nbsp;&nbsp;&nbsp;
     </th>
   </tr>
   <tr bgColor="pink">
@@ -86,7 +86,7 @@
     <c:forEach items="${memberList}" var="member" varStatus="state">
       <tr>
         <td>${state.count}</td>  
-        <td><a href="${pageContext.request.contextPath}/read?id=${member.id}">${member.id}</a></td>   <!-- member.getId() 호출 -->  
+        <td><a href="${pageContext.request.contextPath}/22102526read?id=${member.id}">${member.id}</a></td>   <!-- member.getId() 호출 -->  
         <td>${member.pwd}</td>
         <td>${member.name}</td>
         <td>${member.age}</td>
@@ -108,7 +108,7 @@
 </table>
 <p>
 
-<form name="search" action="${pageContext.request.contextPath}/search" method="post">
+<form name="search" action="${pageContext.request.contextPath}/22102526search" method="post">
  <select name="keyField">
    <option value="0">--선택--</option>
    <option value="id">아이디</option>
