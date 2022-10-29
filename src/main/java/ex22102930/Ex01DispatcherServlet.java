@@ -1,4 +1,4 @@
-package ex221029;
+package ex22102930;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * 모든 사용자 요청을 처리할 진입점 Controller의 역할
  * 사전초기화하는것이 좋음 : loadOnStartup=1 (서버올라갈때 미리 만들수있도록) 설정추가
  */
-@WebServlet(urlPatterns="/front", loadOnStartup=1)
+@WebServlet(urlPatterns="/22102930front", loadOnStartup=1)
 public class Ex01DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

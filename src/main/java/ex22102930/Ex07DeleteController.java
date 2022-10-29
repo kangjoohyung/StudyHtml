@@ -1,4 +1,4 @@
-package ex221029;
+package ex22102930;
 
 import java.io.IOException;
 
@@ -6,15 +6,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Ex04InsertController implements Controller {
+public class Ex07DeleteController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse reponse)
 			throws ServletException, IOException {
-		System.out.println("InsertController 호출");//확인용 콘솔송출
-		
-		// service호출-->dao호출-->등록이 완료되면 redirect방식으로 전체검색으로 이동
-		ModelAndView mv=new ModelAndView("front?key=select", true);
+		System.out.println("DeleteController호출");
+		// service->dao호출해서 삭제완료된 후 이동
+		//이번엔 forward방식으로, 메인화면으로 이동시켜봄
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("index.jsp");
+		mv.setRedirect(true);
 		
 		return mv;
 	}
