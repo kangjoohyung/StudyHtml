@@ -14,14 +14,14 @@ import kosta.dao.SecurityDao;
 /**
  * Servlet implementation class StatementServlet
  */
-@WebServlet("/selectPreState")
+@WebServlet("/221028selectPreState")
 public class Ex03PreparedStatementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          String empno = request.getParameter("empno");
 		
-		SecurityDao dao= new SecurityDao();
+		Ex02SecurityDao dao= new Ex02SecurityDao();
 		List<String> list = dao.preparedSelect(empno);
 		
 		System.out.println("prepared °³¼ö : " +  list.size());
