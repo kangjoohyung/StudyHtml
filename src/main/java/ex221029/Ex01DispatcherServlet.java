@@ -28,7 +28,7 @@ public class Ex01DispatcherServlet extends HttpServlet {
 		}else if(key.equals("update")) {
 			con=new Ex05UpdateController();
 		}else if(key.equals("delete")) {
-			con=new DeleteController();
+			con=new Ex07DeleteController();
 		}else if(key.equals("insert")) {
 			con=new Ex04InsertController();
 		}
