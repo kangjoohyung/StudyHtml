@@ -24,7 +24,7 @@ public class Ex01DispatcherServlet extends HttpServlet {
 		
 		//if문으로 각각의 기능 설정
 		if(key.equals("select")) {
-			con=new SelectController();
+			con=new Ex06SelectController();
 		}else if(key.equals("update")) {
 			con=new Ex05UpdateController();
 		}else if(key.equals("delete")) {
