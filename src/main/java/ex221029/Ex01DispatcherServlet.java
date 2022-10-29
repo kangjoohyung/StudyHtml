@@ -30,11 +30,11 @@ public class Ex01DispatcherServlet extends HttpServlet {
 		}else if(key.equals("delete")) {
 			con=new DeleteController();
 		}else if(key.equals("insert")) {
-			con=new InsertController();
+			con=new Ex04InsertController();
 		}
 		//////////////////////////////
 		//»£√‚
-		ModelAndView mv=con.handleRequest(request, response);
+		Ex03ModelAndView mv=con.handleRequest(request, response);
 		if(mv.isRedirect()) {
 			response.sendRedirect(mv.getViewName());
 		}else {
