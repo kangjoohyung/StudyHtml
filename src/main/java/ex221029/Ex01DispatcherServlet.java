@@ -20,7 +20,7 @@ public class Ex01DispatcherServlet extends HttpServlet {
 		String key=request.getParameter("key");
 		System.out.println("key="+key); //넘어오는 키값 확인용-콘솔 출력
 		
-		Controller con=null;
+		Ex02Controller con=null;
 		
 		//if문으로 각각의 기능 설정
 		if(key.equals("select")) {
