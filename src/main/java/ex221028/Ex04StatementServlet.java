@@ -14,7 +14,7 @@ import kosta.dao.SecurityDao;
 /**
  * Servlet implementation class StatementServlet
  */
-@WebServlet("/selectState")
+@WebServlet("/221028selectState")
 public class Ex04StatementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
@@ -22,7 +22,7 @@ public class Ex04StatementServlet extends HttpServlet {
 		
 		String empno = request.getParameter("empno");//
 		
-		SecurityDao dao= new SecurityDao();
+		Ex02SecurityDao dao= new Ex02SecurityDao();
 		List<String> list = dao.statementSelect(empno);
 		
 		System.out.println("statement °³¼ö : " +  list.size());
