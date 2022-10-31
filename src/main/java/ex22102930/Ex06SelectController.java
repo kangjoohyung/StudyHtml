@@ -16,7 +16,7 @@ public class Ex06SelectController implements Ex02Controller {
 		
 		request.setAttribute("message", "전체검색 결과입니다");//${message} 뷰 사용
 		
-		Ex03ModelAndView mv=new Ex03ModelAndView("selectResult.jsp");//
+		Ex03ModelAndView mv=new Ex03ModelAndView("SelfStudy/22102930/02_selectResult.jsp");//
 		return mv;
 	}
 
