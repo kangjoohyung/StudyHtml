@@ -47,7 +47,7 @@ public class Ex04DispatcherServlet extends HttpServlet {
 		}*/
 		//////////////////////////////
 		//»£√‚
-		ModelAndView mv=con.handleRequest(request, response);
+		Ex05ModelAndView mv=con.handleRequest(request, response);
 		if(mv.isRedirect()) {
 			response.sendRedirect(mv.getViewName());
 		}else {
