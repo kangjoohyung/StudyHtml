@@ -15,16 +15,16 @@ import javax.servlet.http.HttpServletResponse;
  * 모든 사용자 요청을 처리할 진입점 Controller의 역할
  * 사전초기화하는것이 좋음 : loadOnStartup=1 (서버올라갈때 미리 만들수있도록) 설정추가
  */
-@WebServlet(urlPatterns="/front", loadOnStartup=1)
+@WebServlet(urlPatterns="/221101front", loadOnStartup=1)
 public class Ex04DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private Map<String, Controller> map;
+	private Map<String, Ex03Controller> map;
 
 	@Override
 	public void init() throws ServletException {
 		ServletContext application=super.getServletContext();
-		map=(Map<String, Controller>)application.getAttribute("map");
+		map=(Map<String, Ex03Controller>)application.getAttribute("map");
 	}
 
 
@@ -33,7 +33,7 @@ public class Ex04DispatcherServlet extends HttpServlet {
 		//System.out.println("되나"); //index.jsp에서 연결이 되는지 콘솔출력으로 확인
 		String key=request.getParameter("key");
 		System.out.println("key="+key); //넘어오는 키값 확인용-콘솔 출력
-		Controller con=map.get(key);
+		Ex03Controller con=map.get(key);
 		/*
 		//if문으로 각각의 기능 설정
 		if(key.equals("select")) {
