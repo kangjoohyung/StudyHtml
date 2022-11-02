@@ -15,10 +15,10 @@
 <h2>MVC Refactoring TEST</h2>
 <h4>
 \${path }=${path }<p><!-- 복붙해와서 step16으로 뜸, 키값도 16찾아가는듯? -->
-<a href="${path }/front?key=select">검색하기</a>
-<a href="${path }/front?key=update">수정하기</a>
-<a href="${path }/front?key=delete">삭제하기</a>
-<a href="${path }/front?key=insert">등록하기</a>
+<a href="${path }/221101front?key=221101select">검색하기</a>
+<a href="${path }/221101front?key=221101update">수정하기</a>
+<a href="${path }/221101front?key=221101delete">삭제하기</a>
+<a href="${path }/221101front?key=221101insert">등록하기</a>
 </h4>
 
 </body>
