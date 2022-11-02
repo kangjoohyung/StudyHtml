@@ -6,15 +6,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Ex06InsertController implements Controller {
+public class Ex06InsertController implements Ex03Controller {
 
 	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse reponse)
+	public Ex05ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse reponse)
 			throws ServletException, IOException {
 		System.out.println("InsertController 호출");//확인용 콘솔송출
 		
 		// service호출-->dao호출-->등록이 완료되면 redirect방식으로 전체검색으로 이동
-		ModelAndView mv=new ModelAndView("front?key=select", true);
+		Ex05ModelAndView mv=new Ex05ModelAndView("221101front?key=221101select", true);
 		
 		return mv;
 	}
