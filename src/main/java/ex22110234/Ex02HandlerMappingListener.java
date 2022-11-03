@@ -37,13 +37,13 @@ public class Ex02HandlerMappingListener implements ServletContextListener {
     	 * 자바에서 이러한 개념을 적용해 놓은 API가 Class<?>이다.
     	 */
 	    try {
-	    	Map<String, Controller> map=new HashMap<String, Controller>();
+	    	Map<String, Ex03Controller> map=new HashMap<String, Ex03Controller>();
 	    	Map<String, Class<?>> clzMap=new HashMap<String, Class<?>>();
 	    	for(String key:rb.keySet()) {
 	    		String value=rb.getString(key);
 	    		
 	    		Class<?> className=Class.forName(value);
-	    		Controller con=(Controller)className.getDeclaredConstructor().newInstance();
+	    		Ex03Controller con=(Ex03Controller)className.getDeclaredConstructor().newInstance();
 	    		
 	    		map.put(key, con);
 	    		clzMap.put(key, className);
