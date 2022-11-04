@@ -28,7 +28,7 @@ public class Ex07GoodsController implements Ex03Controller {
 		
 		request.setAttribute("goodsList",Arrays.asList("사과","딸기","포도","바나나"));
 		
-		return new Ex06ModelAndView("22110234goods/list.jsp"); //forward이동
+		return new Ex06ModelAndView("22110234goods/04_list.jsp"); //forward이동
 	}
 	
 	/**
@@ -39,7 +39,7 @@ public class Ex07GoodsController implements Ex03Controller {
 		System.out.println("GoodsController의 insert 호출");
 		
 		Ex06ModelAndView mv=new Ex06ModelAndView();
-		mv.setViewName("22110234goods/registerOk.jsp");
+		mv.setViewName("22110234goods/05_registerOk.jsp");
 		mv.setRedirect(true); //redirect방식 전송
 		
 		return mv;
