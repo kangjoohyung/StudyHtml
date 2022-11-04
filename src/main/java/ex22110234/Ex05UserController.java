@@ -30,7 +30,7 @@ public class Ex05UserController implements Ex03Controller {
 		HttpSession session=request.getSession();
 		session.setAttribute("sessionMessage", "로그인된 정보입니다");
 		
-		return new Ex06ModelAndView("user/login.jsp",true);//redirect방식으로 이동한다.
+		return new Ex06ModelAndView("22110234user/02_login.jsp",true);//redirect방식으로 이동한다.
 	}
 	
 	/**
@@ -43,7 +43,7 @@ public class Ex05UserController implements Ex03Controller {
 		//request저장이니까 forward이동
 		request.setAttribute("message", "수정완료되었습니다");
 		
-		return new Ex06ModelAndView("user/update.jsp"); //forward방식으로 이동하자.
+		return new Ex06ModelAndView("22110234user/03_update.jsp"); //forward방식으로 이동하자.
 	}
 	
 	/**
