@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 public class Ex05UserController implements Controller {
 
 	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse reponse)
+	public Ex06ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse reponse)
 			throws ServletException, IOException {
 		
 		return null;
@@ -20,7 +20,7 @@ public class Ex05UserController implements Controller {
 	/**
 	 * 로그인
 	 */
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse reponse)
+	public Ex06ModelAndView login(HttpServletRequest request, HttpServletResponse reponse)
 			throws ServletException, IOException {
 		System.out.println("UserController의 login");
 		// service->dao호출
@@ -30,20 +30,20 @@ public class Ex05UserController implements Controller {
 		HttpSession session=request.getSession();
 		session.setAttribute("sessionMessage", "로그인된 정보입니다");
 		
-		return new ModelAndView("user/login.jsp",true);//redirect방식으로 이동한다.
+		return new Ex06ModelAndView("user/login.jsp",true);//redirect방식으로 이동한다.
 	}
 	
 	/**
 	 * 회원정보수정
 	 */
-	public ModelAndView update(HttpServletRequest request, HttpServletResponse reponse)
+	public Ex06ModelAndView update(HttpServletRequest request, HttpServletResponse reponse)
 			throws ServletException, IOException {
 		System.out.println("UserController의 update");
 		// 서비스호출->dao
 		//request저장이니까 forward이동
 		request.setAttribute("message", "수정완료되었습니다");
 		
-		return new ModelAndView("user/update.jsp"); //forward방식으로 이동하자.
+		return new Ex06ModelAndView("user/update.jsp"); //forward방식으로 이동하자.
 	}
 	
 	/**

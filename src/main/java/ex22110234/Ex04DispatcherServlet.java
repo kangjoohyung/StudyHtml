@@ -43,7 +43,7 @@ public class Ex04DispatcherServlet extends HttpServlet {
 		Class<?> clz=clzMap.get(key);
 		Method method=clz.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class); //Method°¡ reflect
 		
-		ModelAndView mv=(ModelAndView) method.invoke(con, request, response);
+		Ex06ModelAndView mv=(Ex06ModelAndView) method.invoke(con, request, response);
 		
 		if(mv.isRedirect()) {
 			response.sendRedirect(mv.getViewName());
