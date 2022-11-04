@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 /**
  * 회원관리에 관한 Controller
  */
-public class Ex05UserController implements Controller {
+public class Ex05UserController implements Ex03Controller {
 
 	@Override
 	public Ex06ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse reponse)
