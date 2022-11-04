@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
  * 상품관련 Controller
  *
  */
-public class Ex07GoodsController implements Controller {
+public class Ex07GoodsController implements Ex03Controller {
 
 	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse reponse)
+	public Ex06ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse reponse)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		return null;
@@ -22,24 +22,24 @@ public class Ex07GoodsController implements Controller {
 	/**
 	 * 상품목록 가져오기
 	 */
-	public ModelAndView list(HttpServletRequest request, HttpServletResponse reponse)
+	public Ex06ModelAndView list(HttpServletRequest request, HttpServletResponse reponse)
 			throws ServletException, IOException {
 		System.out.println("GoodsController의 list");
 		
 		request.setAttribute("goodsList",Arrays.asList("사과","딸기","포도","바나나"));
 		
-		return new ModelAndView("goods/list.jsp"); //forward이동
+		return new Ex06ModelAndView("22110234goods/list.jsp"); //forward이동
 	}
 	
 	/**
 	 * 상품등록
 	 */
-	public ModelAndView insert(HttpServletRequest request, HttpServletResponse reponse)
+	public Ex06ModelAndView insert(HttpServletRequest request, HttpServletResponse reponse)
 			throws ServletException, IOException {
 		System.out.println("GoodsController의 insert 호출");
 		
-		ModelAndView mv=new ModelAndView();
-		mv.setViewName("goods/registerOk.jsp");
+		Ex06ModelAndView mv=new Ex06ModelAndView();
+		mv.setViewName("22110234goods/registerOk.jsp");
 		mv.setRedirect(true); //redirect방식 전송
 		
 		return mv;
