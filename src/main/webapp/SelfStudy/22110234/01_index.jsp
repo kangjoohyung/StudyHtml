@@ -16,20 +16,20 @@
 
 <h3>
 회원관리-UserController<p>
-<a href="${path }/front?key=user&methodName=login">로그인하기</a><p>
-<a href="${path }/front?key=user&methodName=update">회원정보수정</a><p>
+<a href="${path }/22110234front?key=user&methodName=login">로그인하기</a><p>
+<a href="${path }/22110234front?key=user&methodName=update">회원정보수정</a><p>
 </h3>
 <hr>
 <h3>
 상품관리-GoodsController<p>
-<a href="${path }/front?key=goods&methodName=list">상품List</a><p>
-<a href="${path }/front?key=goods&methodName=insert">상품등록</a><p>
+<a href="${path }/22110234front?key=goods&methodName=list">상품List</a><p>
+<a href="${path }/22110234front?key=goods&methodName=insert">상품등록</a><p>
 </h3>
 <hr>
 <h3>
 게시판관리-BoardController<p>
-<a href="${path }/front?key=board&methodName=list">게시판 List</a><p>
-<a href="${path }/front?key=board&methodName=read">상세보기</a><p>
+<a href="${path }/22110234front?key=board&methodName=list">게시판 List</a><p>
+<a href="${path }/22110234front?key=board&methodName=read">상세보기</a><p>
 </h3>
 
 </body>
