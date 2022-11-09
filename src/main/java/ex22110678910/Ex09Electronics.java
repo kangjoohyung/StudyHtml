@@ -16,7 +16,7 @@ public class Ex09Electronics {
 	private int  fsize;
 	
 	//댓글정보 
-	private List<Reply> repliesList ;
+	private List<Ex10Reply> repliesList ;
 	
 	
 	//페이지처리
@@ -101,10 +101,10 @@ public class Ex09Electronics {
 		this.pageCnt = pageCnt;
 	}
 	
-	public List<Reply> getRepliesList() {
+	public List<Ex10Reply> getRepliesList() {
 		return repliesList;
 	}
-	public void setRepliesList(List<Reply> repliesList) {
+	public void setRepliesList(List<Ex10Reply> repliesList) {
 		this.repliesList = repliesList;
 	}
 	
