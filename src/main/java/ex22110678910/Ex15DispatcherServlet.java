@@ -47,7 +47,7 @@ public class Ex15DispatcherServlet extends HttpServlet {
 			Method method = 
 					   clz.getMethod(methodName, HttpServletRequest.class , HttpServletResponse.class);
 			
-			    ModelAndView mv = (ModelAndView)method.invoke(con, request, response);
+			    Ex17ModelAndView mv = (Ex17ModelAndView)method.invoke(con, request, response);
 			
 			/////////////////////////////////////////////////////////
 			if(mv.isRedirect()) {
