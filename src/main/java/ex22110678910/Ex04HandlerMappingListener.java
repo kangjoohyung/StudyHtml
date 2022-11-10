@@ -45,14 +45,14 @@ public class Ex04HandlerMappingListener implements ServletContextListener {
     	 * */
     	try {
     		
-    		Map<String, Controller> map = new HashMap<String, Controller>();
+    		Map<String, Ex16Controller> map = new HashMap<String, Ex16Controller>();
     		Map<String, Class<?> > clzMap = new HashMap<String, Class<?>>();
     		
 	    	for( String key :  rb.keySet() ){
 	    		String value = rb.getString(key);
 	    		Class<?> className = Class.forName(value);
 	    		System.out.println("54");
-	    		Controller con = (Controller)className.getDeclaredConstructor().newInstance();
+	    		Ex16Controller con = (Ex16Controller)className.getDeclaredConstructor().newInstance();
 	    		System.out.println("56");
 	    		map.put(key, con);//객체
 	    		clzMap.put(key, className);//프로퍼티 주소

@@ -18,13 +18,13 @@ import javax.servlet.http.HttpServletResponse;
 public class Ex15DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private Map<String, Controller> map;
+	private Map<String, Ex16Controller> map;
 	private Map<String, Class<?>> clzMap;
 	
 	@Override
 	public void init() throws ServletException {
 		ServletContext application = super.getServletContext();
-		map = (Map<String, Controller>)application.getAttribute("map");
+		map = (Map<String, Ex16Controller>)application.getAttribute("map");
 		clzMap = (Map<String, Class<?>>)application.getAttribute("clzMap");
 	}
     
@@ -42,7 +42,7 @@ public class Ex15DispatcherServlet extends HttpServlet {
 		
 		System.out.println("key = " + key +" , methodName = " + methodName);//콘솔확인용
 		try {
-			Controller con = map.get(key);
+			Ex16Controller con = map.get(key);
 			Class<?> clz = clzMap.get(key);
 			Method method = 
 					   clz.getMethod(methodName, HttpServletRequest.class , HttpServletResponse.class);
