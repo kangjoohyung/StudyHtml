@@ -85,24 +85,24 @@
   </context-param>
   
   <filter>
-    <filter-name>encodingFilter</filter-name>
-    <filter-class>kosta.mvc.filter.EncodingFilter</filter-class>
+    <filter-name>ex22110678910encodingFilter</filter-name>
+    <filter-class>ex22110678910.Ex02EncodingFilter</filter-class>
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
     </init-param>
   </filter>
   <filter-mapping>
-   <filter-name>encodingFilter</filter-name>
+   <filter-name>ex22110678910encodingFilter</filter-name>
    <url-pattern>/*</url-pattern>
   </filter-mapping>
 
   <filter>
-    <filter-name>sessionCheckFilter</filter-name>
-    <filter-class>kosta.mvc.filter.SessionCheckFilter</filter-class>
+    <filter-name>ex22110678910sessionCheckFilter</filter-name>
+    <filter-class>ex22110678910.Ex03SessionCheckFilter</filter-class>
   </filter>
   <filter-mapping>
-   <filter-name>sessionCheckFilter</filter-name>
+   <filter-name>ex22110678910sessionCheckFilter</filter-name>
    <url-pattern>/22110678910front</url-pattern>
   </filter-mapping>
   
