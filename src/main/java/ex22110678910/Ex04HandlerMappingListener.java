@@ -9,8 +9,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import kosta.mvc.controller.Controller;
-
 /**
  * 서버가 시작될때 각 Conroller의 구현객체를 미리 생성해서 Map에 저장한후
  * ServletContext영역에 map을 저장한다.
