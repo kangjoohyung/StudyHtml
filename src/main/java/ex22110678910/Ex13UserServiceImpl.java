@@ -2,21 +2,17 @@ package ex22110678910;
 
 import java.sql.SQLException;
 
-import kosta.mvc.dao.UserDAO;
-import kosta.mvc.dao.UserDAOImpl;
-import kosta.mvc.dto.UserDTO;
-import kosta.mvc.exception.AuthenticationException;
 
-public class Ex13UserServiceImpl implements UserService {
-     private UserDAO userDAO = new UserDAOImpl();
+public class Ex13UserServiceImpl implements Ex13UserService {
+     private Ex11UserDAO userDAO = new Ex11UserDAOImpl();
   	
 	@Override
-	public UserDTO loginCheck(UserDTO userDTO) throws SQLException, AuthenticationException {
+	public Ex08UserDTO loginCheck(Ex08UserDTO userDTO) throws SQLException, Ex05AuthenticationException {
 		
 		//dao호출
-		UserDTO dbDTO = userDAO.loginCheck(userDTO);
+		Ex08UserDTO dbDTO = userDAO.loginCheck(userDTO);
 		if(dbDTO == null) {
-			throw new AuthenticationException("정보를 다시 확인해주세요.");
+			throw new Ex05AuthenticationException("정보를 다시 확인해주세요.");
 		}
 		
 		return dbDTO;
