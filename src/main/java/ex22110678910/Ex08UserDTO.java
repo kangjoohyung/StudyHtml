@@ -8,7 +8,7 @@ public class Ex08UserDTO {
    
    public Ex08UserDTO() {
 	   //순서확인용출력
-	   System.out.println("UserDTO");
+	   System.out.println("Ex08UserDTO");
    }
    public Ex08UserDTO(String userId, String pwd) {
 		super();
