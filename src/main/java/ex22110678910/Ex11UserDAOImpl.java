@@ -10,7 +10,7 @@ import java.util.Properties;
 import kosta.mvc.dto.UserDTO;
 import kosta.mvc.util.DbUtil;
 
-public class Ex11UserDAOImpl implements UserDAO {
+public class Ex11UserDAOImpl implements Ex11UserDAO {
 	private Properties proFile = new Properties();
 	
 	public Ex11UserDAOImpl() {
@@ -19,7 +19,7 @@ public class Ex11UserDAOImpl implements UserDAO {
 			
 			//현재 프로젝트가 런타임(실행)될때, 즉 서버가 실행될때 classes폴더의 위치를
 			//동적으로 가져와서 경로를 설정해야한다.
-			InputStream is = getClass().getClassLoader().getResourceAsStream("dbQuery.properties");
+			InputStream is = getClass().getClassLoader().getResourceAsStream("ex02dbQuery.properties");
 			proFile.load(is);
 			
 			System.out.println("query.userlogin = " +proFile.getProperty("query.userlogin"));
@@ -29,26 +29,26 @@ public class Ex11UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserDTO loginCheck(UserDTO userDTO) throws SQLException {
+	public Ex08UserDTO loginCheck(Ex08UserDTO userDTO) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		UserDTO dbDTO =null;
+		Ex08UserDTO dbDTO =null;
 		
 		String sql= proFile.getProperty("query.userlogin");//select * from users where user_id=? and pwd=?
 		try {
-			con = DbUtil.getConnection();
+			con = Ex01DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, userDTO.getUserId());
 			ps.setString(2, userDTO.getPwd());
 			
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				dbDTO = new UserDTO(rs.getString(1), rs.getString(2), rs.getString(3));
+				dbDTO = new Ex08UserDTO(rs.getString(1), rs.getString(2), rs.getString(3));
 			}
 			
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex01DbUtil.dbClose(con, ps, rs);
 		}
 		return dbDTO;
 	}
