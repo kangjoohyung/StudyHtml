@@ -2,12 +2,9 @@
 
 import java.sql.SQLException;
 
-import kosta.mvc.dto.UserDTO;
-import kosta.mvc.exception.AuthenticationException;
-
 public interface Ex13UserService {
 	/**
 	 * 로그인 체크
 	 * */
-   UserDTO loginCheck(UserDTO userDTO)throws SQLException , AuthenticationException;
+   Ex08UserDTO loginCheck(Ex08UserDTO userDTO)throws SQLException , Ex05AuthenticationException;
 }
