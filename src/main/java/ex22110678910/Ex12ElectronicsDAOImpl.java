@@ -9,13 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import kosta.mvc.dto.Electronics;
-import kosta.mvc.dto.Reply;
-import kosta.mvc.dto.UserDTO;
-import kosta.mvc.paging.PageCnt;
-import kosta.mvc.util.DbUtil;
 
-public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
+public class Ex12ElectronicsDAOImpl implements Ex12ElectronicsDAO {
   private Properties proFile = new Properties();
 	
 	public Ex12ElectronicsDAOImpl() {
@@ -34,50 +29,50 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 	}
 	
 	@Override
-	public List<Electronics> selectAll() throws SQLException {
+	public List<Ex09Electronics> selectAll() throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Electronics> list = new ArrayList<Electronics>();
+		List<Ex09Electronics> list = new ArrayList<Ex09Electronics>();
 		
-		String sql= proFile.getProperty("query.select");//select * from Electronics  order by writeday desc
+		String sql= proFile.getProperty("query.select");//select * from Ex09Electronics  order by writeday desc
 		try {
-			con = DbUtil.getConnection();
+			con = Ex01DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				Electronics electonics = 
-				new Electronics(rs.getString(1), rs.getString(2), rs.getInt(3),
+				Ex09Electronics electonics = 
+				new Ex09Electronics(rs.getString(1), rs.getString(2), rs.getInt(3),
 						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7),
 						rs.getString(8), rs.getInt(9));
 				
 			   list.add(electonics);
 			}
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex01DbUtil.dbClose(con, ps, rs);
 		}
 		return list;
 	}
 
 	@Override
-	public List<Electronics> getBoardList(int pageNo) throws SQLException {
+	public List<Ex09Electronics> getBoardList(int pageNo) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Electronics> list = new ArrayList<Electronics>();
+		List<Ex09Electronics> list = new ArrayList<Ex09Electronics>();
 		
-		String sql= proFile.getProperty("query.pagingSelect");//select * from  (SELECT a.*, ROWNUM rnum FROM (SELECT * FROM Electronics ORDER BY writeday desc) a) where  rnum>=? and rnum <=? 
+		String sql= proFile.getProperty("query.pagingSelect");//select * from  (SELECT a.*, ROWNUM rnum FROM (SELECT * FROM Ex09Electronics ORDER BY writeday desc) a) where  rnum>=? and rnum <=? 
 		try {
 			
 			
-			con = DbUtil.getConnection();
+			con = Ex01DbUtil.getConnection();
 			con.setAutoCommit(false);
 			
 			//전체레코드수를 구한다.
 			int totalCount = this.getTotalCount(con);
-			int totalPage = totalCount%PageCnt.pageSize==0 ? totalCount/PageCnt.pageSize : (totalCount/PageCnt.pageSize)+1;
+			int totalPage = totalCount%Ex07PageCnt.pageSize==0 ? totalCount/Ex07PageCnt.pageSize : (totalCount/Ex07PageCnt.pageSize)+1;
 			
-			PageCnt pageCnt = new PageCnt();
+			Ex07PageCnt pageCnt = new Ex07PageCnt();
 			pageCnt.setPageCnt(totalPage);
 			pageCnt.setPageNo(pageNo);
 			
@@ -88,15 +83,15 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 			
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				Electronics electonics = 
-				new Electronics(rs.getString(1), rs.getString(2), rs.getInt(3),
+				Ex09Electronics electonics = 
+				new Ex09Electronics(rs.getString(1), rs.getString(2), rs.getInt(3),
 						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7),
 						rs.getString(8), rs.getInt(9));
 				
 			   list.add(electonics);
 			}
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex01DbUtil.dbClose(con, ps, rs);
 		}
 		return list;
 	}
@@ -109,7 +104,7 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		int result=0;
-		String sql= proFile.getProperty("query.totalCount");//select count(*) from Electronics
+		String sql= proFile.getProperty("query.totalCount");//select count(*) from Ex09Electronics
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -117,27 +112,27 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 				result = rs.getInt(1);
 			}
 		}finally {
-			DbUtil.dbClose(null, ps, rs);
+			Ex01DbUtil.dbClose(null, ps, rs);
 		}
 		return result;
 	}
 
 	@Override
-	public Electronics selectByModelNum(String modelNum) throws SQLException {
+	public Ex09Electronics selectByModelNum(String modelNum) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		Electronics electronics = null;
+		Ex09Electronics electronics = null;
 		
-		String sql= proFile.getProperty("query.selectBymodelNum");//select * from Electronics where model_num=?
+		String sql= proFile.getProperty("query.selectBymodelNum");//select * from Ex09Electronics where model_num=?
 		try {
-			con = DbUtil.getConnection();
+			con = Ex01DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, modelNum);
 			
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				electronics = new Electronics(rs.getString(1), rs.getString(2), rs.getInt(3),
+				electronics = new Ex09Electronics(rs.getString(1), rs.getString(2), rs.getInt(3),
 						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7),
 						rs.getString(8), rs.getInt(9));
 				
@@ -146,7 +141,7 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 			
 			}
 		}finally {
-			DbUtil.dbClose(con, ps, rs);
+			Ex01DbUtil.dbClose(con, ps, rs);
 		}
 		return electronics;
 	}
@@ -158,22 +153,22 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 	/**
 	 * 댓글정보 가져오기 
 	 * */
-	private List<Reply> getReply(Connection con , String modelNum)throws SQLException{
+	private List<Ex10Reply> getReply(Connection con , String modelNum)throws SQLException{
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Reply> list = new ArrayList<Reply>();
+		List<Ex10Reply> list = new ArrayList<Ex10Reply>();
 		String sql=proFile.getProperty("query.replyByParentNum");//select * from replies where parent_model_num=?
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, modelNum);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				Reply reply = new Reply(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
+				Ex10Reply reply = new Ex10Reply(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
 				list.add(reply);
 			}
 			
 		}finally {
-			DbUtil.dbClose(null, ps, rs);
+			Ex01DbUtil.dbClose(null, ps, rs);
 		}
 		return list;
 	}
@@ -184,27 +179,27 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 		Connection con=null;
 		PreparedStatement ps=null;
 		int result=0;
-		String sql= proFile.getProperty("query.updateReadnum");//update Electronics set readnum=readnum+1 where model_num=?
+		String sql= proFile.getProperty("query.updateReadnum");//update Ex09Electronics set readnum=readnum+1 where model_num=?
 		try {
-			con = DbUtil.getConnection();
+			con = Ex01DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, modelNum);
 			result = ps.executeUpdate();
 		}finally {
-			DbUtil.dbClose(con, ps);
+			Ex01DbUtil.dbClose(con, ps);
 		}
 		return result;
 	}
 	
 
 	@Override
-	public int insert(Electronics electronics) throws SQLException {
+	public int insert(Ex09Electronics electronics) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		int result=0;
-		String sql= proFile.getProperty("query.insert");//insert into Electronics values(?,?,?,?,?,sysdate,0,?,?)
+		String sql= proFile.getProperty("query.insert");//insert into Ex09Electronics values(?,?,?,?,?,sysdate,0,?,?)
 		try {
-			con = DbUtil.getConnection();
+			con = Ex01DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 			ps.setString(1, electronics.getModelNum());
 			ps.setString(2, electronics.getModelName());
@@ -216,7 +211,7 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 			
 			result = ps.executeUpdate();
 		}finally {
-			DbUtil.dbClose(con, ps);
+			Ex01DbUtil.dbClose(con, ps);
 		}
 		return result;
 	}
@@ -227,9 +222,9 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 		Connection con=null;
 		PreparedStatement ps=null;
 		int result=0;
-		String sql= proFile.getProperty("query.delete");//delete Electronics where model_num=? and password=?
+		String sql= proFile.getProperty("query.delete");//delete Ex09Electronics where model_num=? and password=?
 		try {
-			con = DbUtil.getConnection();
+			con = Ex01DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 
 			ps.setString(1, modelNum);
@@ -237,19 +232,19 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 			
 			result = ps.executeUpdate();
 		}finally {
-			DbUtil.dbClose(con, ps);
+			Ex01DbUtil.dbClose(con, ps);
 		}
 		return result;
 	}
 
 	@Override
-	public int update(Electronics electronics) throws SQLException {
+	public int update(Ex09Electronics electronics) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
 		int result=0;
-		String sql= proFile.getProperty("query.update");//update Electronics set model_name=?,price=?,description=? where model_num=? and password=?
+		String sql= proFile.getProperty("query.update");//update Ex09Electronics set model_name=?,price=?,description=? where model_num=? and password=?
 		try {
-			con = DbUtil.getConnection();
+			con = Ex01DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
 
 			ps.setString(1, electronics.getModelName());
@@ -260,7 +255,7 @@ public class Ex12ElectronicsDAOImpl implements ElectronicsDAO {
 			
 			result = ps.executeUpdate();
 		}finally {
-			DbUtil.dbClose(con, ps);
+			Ex01DbUtil.dbClose(con, ps);
 		}
 		return result;
 	}//updateEnd
