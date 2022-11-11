@@ -7,16 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import kosta.mvc.dto.UserDTO;
-import kosta.mvc.service.UserService;
-import kosta.mvc.service.UserServiceImpl;
 
-public class Ex18UserController implements Controller {
+public class Ex18UserController implements Ex16Controller {
 	
-	private UserService userService = new UserServiceImpl();
+	private Ex13UserService userService = new Ex13UserServiceImpl();
 
 	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+	public Ex17ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		return null;
@@ -25,7 +22,7 @@ public class Ex18UserController implements Controller {
 	/**
 	 * 로그인 기능
 	 * */
-	public ModelAndView login(HttpServletRequest request, HttpServletResponse response)
+	public Ex17ModelAndView login(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
     
 		 //두개의 전송되는 값을 받는다.
@@ -33,7 +30,7 @@ public class Ex18UserController implements Controller {
 		String pwd =request.getParameter("pwd");
 		
 		//서비스 호출 
-		UserDTO dbDTO = userService.loginCheck( new UserDTO(userId, pwd) );
+		Ex08UserDTO dbDTO = userService.loginCheck( new Ex08UserDTO(userId, pwd) );
 		
 		//로그인성공하면 세션에 정보를 저장 - ${loginUser} / ${loginName}
 		HttpSession session = request.getSession();
@@ -42,19 +39,19 @@ public class Ex18UserController implements Controller {
 
 		//index.jsp이동 - redirect방식
 		
-		return new ModelAndView("index.jsp", true);
+		return new Ex17ModelAndView("SelfStudy/22110678910_important/01index.jsp", true);
 	}
 
 	/**
 	 * 로그아웃
 	 * */
-	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response)
+	public Ex17ModelAndView logout(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		
 		//모든 세션의정보를 삭제한다.
 		request.getSession().invalidate();
 		
-		return new ModelAndView("index.jsp", true);
+		return new Ex17ModelAndView("SelfStudy/22110678910_important/01index.jsp", true);
 		
 		
 	}
