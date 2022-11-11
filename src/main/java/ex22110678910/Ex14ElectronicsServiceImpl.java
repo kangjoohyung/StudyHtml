@@ -4,12 +4,8 @@ import java.io.File;
 import java.sql.SQLException;
 import java.util.List;
 
-import kosta.mvc.dao.ElectronicsDAO;
-import kosta.mvc.dao.ElectronicsDAOImpl;
-import kosta.mvc.dto.Electronics;
-
-public class Ex14ElectronicsServiceImpl implements ElectronicsService {
-	private ElectronicsDAO elecDAO = new ElectronicsDAOImpl();
+public class Ex14ElectronicsServiceImpl implements Ex14ElectronicsService {
+	private Ex12ElectronicsDAO elecDAO = new Ex12ElectronicsDAOImpl();
 	
 
 	public Ex14ElectronicsServiceImpl() {
@@ -18,27 +14,27 @@ public class Ex14ElectronicsServiceImpl implements ElectronicsService {
 	}
 
 	@Override
-	public List<Electronics> selectAll() throws SQLException {
-		List<Electronics>  list = elecDAO.selectAll();
+	public List<Ex09Electronics> selectAll() throws SQLException {
+		List<Ex09Electronics>  list = elecDAO.selectAll();
 		return list;
 	}
 
 	@Override
-	public List<Electronics> selectAll(int pageNo) throws SQLException {
-		List<Electronics>  list = elecDAO.getBoardList(pageNo);//페이징처리하는 dao호출
+	public List<Ex09Electronics> selectAll(int pageNo) throws SQLException {
+		List<Ex09Electronics>  list = elecDAO.getBoardList(pageNo);//페이징처리하는 dao호출
 		
 		return list;
 	}
 
 	@Override
-	public void insert(Electronics electronics) throws SQLException {
+	public void insert(Ex09Electronics electronics) throws SQLException {
 		int result = elecDAO.insert(electronics);
 		if(result==0)throw new SQLException("등록되지 않았습니다.");
 
 	}
 
 	@Override
-	public Electronics selectByModelnum(String modelNum, boolean flag) throws SQLException {
+	public Ex09Electronics selectByModelnum(String modelNum, boolean flag) throws SQLException {
 		
 		if(flag) {
 			if(elecDAO.increamentByReadnum(modelNum) == 0){//조회수 증가
@@ -46,7 +42,7 @@ public class Ex14ElectronicsServiceImpl implements ElectronicsService {
 			}
 		}
 
-		Electronics electronics = elecDAO.selectByModelNum(modelNum);
+		Ex09Electronics electronics = elecDAO.selectByModelNum(modelNum);
 		if(electronics == null)
 			throw new SQLException("상세보기에 오류가 발생했습니다.");
 		
@@ -55,7 +51,7 @@ public class Ex14ElectronicsServiceImpl implements ElectronicsService {
 
 	@Override
 	public void delete(String modelNum, String password , String saveDir) throws SQLException {
-         Electronics dbElec = elecDAO.selectByModelNum(modelNum);
+         Ex09Electronics dbElec = elecDAO.selectByModelNum(modelNum);
 		
 		if(dbElec == null) {
 			throw new SQLException("모델번호 오류로 삭제 할수없습니다.");
@@ -77,9 +73,9 @@ public class Ex14ElectronicsServiceImpl implements ElectronicsService {
 	}
 
 	@Override
-	public void update(Electronics electronics) throws SQLException {
+	public void update(Ex09Electronics electronics) throws SQLException {
 		//전달된 비번과 DB에저장된 비번이 일치하는지 먼저 체크한다.
-		Electronics dbElec = elecDAO.selectByModelNum(electronics.getModelNum());
+		Ex09Electronics dbElec = elecDAO.selectByModelNum(electronics.getModelNum());
 		
 		if(dbElec == null) {
 			throw new SQLException("모델번호 오류로 수정할수 없습니다.");
