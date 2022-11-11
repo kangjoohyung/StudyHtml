@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 모든 사용자 요청을 처리할 진입점 Controller의 역할
  */
-@WebServlet(urlPatterns = "/front" , loadOnStartup = 1)
+@WebServlet(urlPatterns = "/22110678910front" , loadOnStartup = 1)
 public class Ex15DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -58,7 +58,7 @@ public class Ex15DispatcherServlet extends HttpServlet {
 		}catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMsg", e.getCause().getMessage());
-			request.getRequestDispatcher("error/error.jsp").forward(request, response);
+			request.getRequestDispatcher("SelfStudy/22110678910_important/05error.jsp").forward(request, response);
 		}
 		
 	}//service끝
