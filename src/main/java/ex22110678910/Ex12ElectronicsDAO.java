@@ -3,27 +3,26 @@ package ex22110678910;
 import java.sql.SQLException;
 import java.util.List;
 
-import kosta.mvc.dto.Electronics;
 
 public interface Ex12ElectronicsDAO {
 	 /**
 	  * 레코드 전체 검색
 	  * */
-	  List<Electronics> selectAll() throws SQLException;
+	  List<Ex09Electronics> selectAll() throws SQLException;
 	  
 	  /**
 		  * 레코드 전체 검색(페이지처리)
 		  * */
-	   List<Electronics> getBoardList(int pageNo) throws SQLException;
+	   List<Ex09Electronics> getBoardList(int pageNo) throws SQLException;
 	  
 	  /**
 	   * 모델번호에 해당하는 레코드 검색
 	   * */
-	  Electronics selectByModelNum(String modelNum) throws SQLException;
+	  Ex09Electronics selectByModelNum(String modelNum) throws SQLException;
 	  
 	  /**
 	   * 조회수를 증가하는 기능
-	   * update Electronics set readnum = readnum + 1 where model_num=?
+	   * update Ex09Electronics set readnum = readnum + 1 where model_num=?
 	   * */
 	  int increamentByReadnum(String modelNum) throws SQLException;
 	  
@@ -32,7 +31,7 @@ public interface Ex12ElectronicsDAO {
 	 * 레코드 삽입
 	 * @return : 1-삽입성공 , 0 - 삽입실패
 	 * */
-	  int insert(Electronics electronics) throws SQLException;
+	  int insert(Ex09Electronics electronics) throws SQLException;
 	  
 	  /**
 	   * 모델번호에 해당하는 레코드 삭제
@@ -44,5 +43,5 @@ public interface Ex12ElectronicsDAO {
 	    * 모델번호에 해당하는 레코드 수정
 	    * @return : 1-수정성공 , 0 - 수정실패
 	    * */
-	  int update(Electronics electronics) throws SQLException;
+	  int update(Ex09Electronics electronics) throws SQLException;
 }

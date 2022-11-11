@@ -7,9 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import kosta.mvc.dto.UserDTO;
-import kosta.mvc.util.DbUtil;
-
 public class Ex11UserDAOImpl implements Ex11UserDAO {
 	private Properties proFile = new Properties();
 	
