@@ -156,7 +156,7 @@ img{width:200px; height:350px}
 		        </td>
 		        <td bgcolor="">
 					<p><span style="font-size:9pt;">
-					<a href="${path}/front?key=elec&methodName=selectByModelNum&modelNum=${elecDto.modelNum}&pageNo=${pageNo}">
+					<a href="${path}/22110678910front?key=elec&methodName=selectByModelNum&modelNum=${elecDto.modelNum}&pageNo=${pageNo}">
 					  ${elecDto.modelName}
 					</a>
 					</span></p>
@@ -190,7 +190,7 @@ img{width:200px; height:350px}
 </table>
 <hr>
 <div align=right>
-<span style="font-size:9pt;">&lt;<a href="${path}/elec/write.jsp">글쓰기</a>&gt;</span>
+<span style="font-size:9pt;">&lt;<a href="${path}/09write.jsp">글쓰기</a>&gt;</span>
 </div>
 <hr color="red">
 
@@ -210,7 +210,7 @@ img{width:200px; height:350px}
 	\${pageNo} = ${pageNo} , 	\${temp}=${temp}  ,   \${startPage}=${startPage}  , <br>
 		 
 		  <c:if test="${(startPage-p.blockCount) > 0}"> <!-- (-2) > 0  -->
-		      <a class="pagination-newer" href="${path}/front?key=elec&methodName=select&pageNo=${startPage-1}">PREV</a>
+		      <a class="pagination-newer" href="${path}/22110678910front?key=elec&methodName=select&pageNo=${startPage-1}">PREV</a>
 		  </c:if>
 		
 				<span class="pagination-inner"> 
@@ -219,13 +219,13 @@ img{width:200px; height:350px}
 					       <c:set var="doneLoop" value="true"/>
 					    </c:if> 
 					  <c:if test="${not doneLoop}" >
-					         <a class="${i==pageNo?'pagination-active':page}" href="${path}/front?key=elec&methodName=select&pageNo=${i}">${i}</a> 
+					         <a class="${i==pageNo?'pagination-active':page}" href="${path}/22110678910front?key=elec&methodName=select&pageNo=${i}">${i}</a> 
 					  </c:if>
 				</c:forEach>
 				</span> 
 				
 				 <c:if test="${(startPage+p.blockCount)<=p.pageCnt}">
-				     <a class="pagination-older" href="${path}/front?key=elec&methodName=select&pageNo=${startPage+p.blockCount}">NEXT</a>
+				     <a class="pagination-older" href="${path}/22110678910front?key=elec&methodName=select&pageNo=${startPage+p.blockCount}">NEXT</a>
 				 </c:if>
 		
 		</div>
