@@ -97,7 +97,7 @@ table td {
 img{width:200px; height:350px}
 </style>
 
-<jsp:include page="../common/header.jsp"/>
+<jsp:include page="04header.jsp"/>
 
 
 
@@ -194,7 +194,7 @@ img{width:200px; height:350px}
 </div>
 <hr color="red">
 
-   <jsp:useBean class="kosta.mvc.paging.PageCnt" id="p"/> 
+   <jsp:useBean class="ex22110678910.Ex07PageCnt" id="p"/> 
    
    \${p.pageCnt} = ${p.pageCnt} / \${p.blockCount}   = ${p.blockCount}  <p>
 
@@ -232,7 +232,7 @@ img{width:200px; height:350px}
 	</nav> 
 
  
-<jsp:include page="../common/footer.jsp"/>
+<jsp:include page="03footer.jsp"/>
 
 
 
