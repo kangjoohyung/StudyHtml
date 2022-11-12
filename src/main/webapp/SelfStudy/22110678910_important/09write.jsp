@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:include page="../common/header.jsp"/>
+<jsp:include page="04header.jsp"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="css/style.css">
 
@@ -42,7 +42,7 @@ function checkValid() {
 </HEAD>
 <BODY>
 
-<form name="writeForm" method="post" action="${path}/front?key=elec&methodName=insert" 
+<form name="writeForm" method="post" action="${path}/22110678910front?key=elec&methodName=insert" 
   onSubmit='return checkValid()' enctype="multipart/form-data">
 <!-- 
      아래 문장으로 전송하면 post방식으로 전송이되고 현재 파일업로드때문에 enctype="multipart/form-data" 설정되어 있기때문에 
@@ -121,6 +121,6 @@ function checkValid() {
 </form>
 
 <hr>
-<div align=right><span style="font-size:9pt;">&lt;<a href="../elec?command=list">리스트로 돌아가기</a>&gt;</span></div>
+<div align=right><span style="font-size:9pt;">&lt;<a href="?command=list">리스트로 돌아가기</a>&gt;</span></div>
 
-<jsp:include page="../common/footer.jsp"/>
+<jsp:include page="03footer.jsp"/>
