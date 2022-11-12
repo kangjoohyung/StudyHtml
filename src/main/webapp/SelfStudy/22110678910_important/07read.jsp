@@ -2,7 +2,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
-<jsp:include page="../common/header.jsp"/>
+<jsp:include page="04header.jsp"/>
 <HEAD>
 <link rel="stylesheet" href="css/style.css">
 
@@ -82,7 +82,7 @@ function sendDelete(){
         </td>
         <td width="450" height="20" colspan="3">
         	<span style="font-size:9pt;"><b>
-        	<a href='${path}/downLoad?fname=${elec.fname}'>
+        	<a href='${path}/22110678910downLoad?fname=${elec.fname}'>
     			${elec.fname} 
       		</a>
       		  ( <fmt:formatNumber value="${elec.fsize}"/> byte)
@@ -96,7 +96,7 @@ function sendDelete(){
            <p align="right"><b><span style="font-size:9pt;">비밀번호</span></b></p>
         </td>
         
-    <form name="requestForm" method=post action="${path}/front">
+    <form name="requestForm" method=post action="${path}/22110678910front">
         <td height="20" colspan="3" align="left" valign="middle">
 				<input type=password name="password" value="">		
 		</td>
@@ -135,12 +135,12 @@ function sendDelete(){
 
 <div align=right>
 <span style="font-size:9pt;">
-	<a href="${path}/front">리스트로 돌아가기-첫번째</a> &nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="${path}/front?pageNo=${pageNo}">리스트로 돌아가기-원래위치</a>
+	<a href="${path}/22110678910front">리스트로 돌아가기-첫번째</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="${path}/22110678910front?pageNo=${pageNo}">리스트로 돌아가기-원래위치</a>
 </span>
 </div>
 
-<jsp:include page="../common/footer.jsp"/>
+<jsp:include page="03footer.jsp"/>
 
 
 
