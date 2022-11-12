@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
-<jsp:include page="../common/header.jsp"/>
+<jsp:include page="04header.jsp"/>
 
-<script src="/controller/resources/js/jquery.form.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.form.min.js"></script>
 
 <div class="container">
 	<div class="col-lg-8 col-lg-offset-2 text-center">
@@ -43,4 +43,4 @@
 </div>
 
 
-<jsp:include page="../common/footer.jsp"/>
+<jsp:include page="03footer.jsp"/>
