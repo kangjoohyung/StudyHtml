@@ -12,7 +12,7 @@
 
 <c:choose>
 	<c:when test="${empty loginUser}">
-		<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/front">
+		<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/22110678910front">
 			<input type="hidden" name="key" value = "user" /> <!-- Controller를 찾는 정보 -->
 			<input type="hidden" name="methodName" value = "login" />  <!-- 메소드이름 -->
 			<fieldset>
