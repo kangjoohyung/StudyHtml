@@ -1,5 +1,5 @@
 <%@ page info="게시판 수정하기" contentType="text/html;charset=UTF-8" %>
-<jsp:include page="../common/header.jsp"/>
+<jsp:include page="04header.jsp"/>
 
 <HTML>
 <HEAD>
@@ -39,7 +39,7 @@ function checkValid() {
 <BODY>
 
 
-<form name=updateForm method=post action="${path}/front" onSubmit="return checkValid()">
+<form name=updateForm method=post action="${path}/22110678910front" onSubmit="return checkValid()">
     <input type="hidden" name="key" value="elec" >
     <input type="hidden" name="methodName" value="update" >
     <input type='hidden' name='modelNum' value="${elec.modelNum}">
@@ -89,8 +89,8 @@ function checkValid() {
 </table>
 </form>
 <hr>
-<div align=right><span style="font-size:9pt;">&lt;<a href="${path}/front">리스트로 돌아가기</a>&gt;</span></div>
-<jsp:include page="../common/footer.jsp"/>
+<div align=right><span style="font-size:9pt;">&lt;<a href="${path}/22110678910front">리스트로 돌아가기</a>&gt;</span></div>
+<jsp:include page="03footer.jsp"/>
 
 
 
